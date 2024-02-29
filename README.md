@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is the implementation of the method proposed in "CMA: A Chromaticity Map Adapter for Robust Detection of Screen-Recapture Document Images" with pytorch(1.7.1, gpu version). The codes are available soon.
+This is the implementation of the method proposed in "CMA: A Chromaticity Map Adapter for Robust Detection of Screen-Recapture Document Images" with pytorch(1.7.1, gpu version). The paper has been accepted by CVPR 2024. The codes are available soon.
 
 ## Introduction
 
