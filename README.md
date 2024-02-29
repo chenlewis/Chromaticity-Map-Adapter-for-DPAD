@@ -7,3 +7,4 @@ This is the implementation of the method proposed in "CMA: A Chromaticity Map Ad
 ## Introduction
 
 In this work, we design the Chromaticity Map Adapter (CMA) network to extract chromaticity feature maps based on the pixel-level distortion model established in the paper. These feature maps are then fed into the Transformer network as multi-modal prompt tokens.
+![Image text](https://github.com/chenlewis/Chromaticity-Map-Adapter-for-DPAD/blob/main/figures/Pixel.png)
