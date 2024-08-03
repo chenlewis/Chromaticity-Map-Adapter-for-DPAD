@@ -1,0 +1,14 @@
+_BASE_: "../base-prompt.yaml"
+RUN_N_TIMES: 1
+DATA:
+  NAME: "doc1"
+  DATAPATH: ""
+  NUMBER_CLASSES: 2
+  MULTILABEL: False
+MODEL:
+  TYPE: "vit"
+  ONLYTEST: "True"
+  TESTPTH: "E:\\code\\VPTCode\\VPT\\originCode\\vpt-main\\vpt-main\\OutputDir\\5_28\\doc1_vit_prompt_deep_Dir2_len100_batchsize32\\doc1\\sup_vitb16_imagenet21k\\lr0.125_wd0.001\\run1\\best_model_38.pth"
+SOLVER:
+  BASE_LR: 0.1
+  WEIGHT_DECAY: 0.01
