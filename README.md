@@ -7,53 +7,13 @@
 
 ## Environment settings
 
-See `env_setup.sh`
+Please refer to the `env_setup.sh` script for setting up the environment. This script is borrowed from the VPT project and can be found here: [VPT GitHub](https://github.com/KMnP/vpt).
 
-## Structure of the this repo (key files are marked with 👉):
-
-- `src/configs`: handles config parameters for the experiments.
-  
-  * 👉 `src/config/config.py`: <u>main config setups for experiments and explanation for each of them. </u> 
-
-- `src/data`: loading and setup input datasets. The `src/data/vtab_datasets` are borrowed from 
-
-  [VTAB github repo](https://github.com/google-research/task_adaptation/tree/master/task_adaptation/data).
-
-
-- `src/engine`: main training and eval actions here.
-
-- `src/models`: handles backbone archs and heads for different fine-tuning protocols 
-
-- 👉`train.py`: call this one for training and eval a model with a specified transfer type.
-- 👉`tune_fgvc.py`: call this one for tuning learning rate and weight decay for a model with a specified transfer type. We used this script for FGVC tasks.
-- 👉`tune_vtab.py`: call this one for tuning vtab tasks: use 800/200 split to find the best lr and wd, and use the best lr/wd for the final runs
-- `launch.py`: contains functions used to launch the job.
+The `env_setup.sh` script will help you configure the necessary dependencies and environment settings required to run the project smoothly.
 
 ## Experiments
 
-### Key configs:
-
-- 🔥CMA related:
-  - MODEL.PROMPT.NUM_TOKENS: prompt length
-  - MODEL.PROMPT.DEEP: deep or shallow prompt
-- Fine-tuning method specification:
-  - MODEL.TRANSFER_TYPE
-- Vision backbones:
-  - DATA.FEATURE: specify which representation to use
-  - MODEL.TYPE: the general backbone type, e.g., "vit" or "swin"
-  - MODEL.MODEL_ROOT: folder with pre-trained model checkpoints
-- Optimization related: 
-  - SOLVER.BASE_LR: learning rate for the experiment
-  - SOLVER.WEIGHT_DECAY: weight decay value for the experiment
-  - DATA.BATCH_SIZE
-- Datasets related:
-  - DATA.NAME
-  - DATA.DATAPATH: where you put the datasets
-  - DATA.NUMBER_CLASSES
-- Others:
-  - RUN_N_TIMES: ensure only run once in case for duplicated submision, not used during vtab runs
-  - OUTPUT_DIR: output dir of the final model and logs
-  - MODEL.SAVE_CKPT: if set to `True`, will save model ckpts and final output of both val and test set
+![CMA](https://github.com/chenlewis/Chromaticity-Map-Adapter-for-DPAD/blob/main/figures/CMA.png)
 
 ### Datasets preperation:
 
@@ -87,14 +47,20 @@ These scripts simplify the process of running training and testing commands, all
 If you find our work helpful in your research, please cite it as:
 
 ```
-@inproceedings{jia2022vpt,
-  title={Visual Prompt Tuning},
-  author={Jia, Menglin and Tang, Luming and Chen, Bor-Chun and Cardie, Claire and Belongie, Serge and Hariharan, Bharath and Lim, Ser-Nam},
-  booktitle={European Conference on Computer Vision (ECCV)},
-  year={2022}
+@inproceedings{chen2024cma,
+  title={CMA: A Chromaticity Map Adapter for Robust Detection of Screen-Recapture Document Images},
+  author={Chen, Changsheng and Lin, Liangwei and Chen, Yongqi and Li, Bin and Zeng, Jishen and Huang, Jiwu},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={15577--15586},
+  year={2024}
 }
 ```
 
-## License
+## Acknowledgements
 
-The majority of VPT is licensed under the CC-BY-NC 4.0 license (see [LICENSE](https://github.com/KMnP/vpt/blob/main/LICENSE) for details). Portions of the project are available under separate license terms: GitHub - [google-research/task_adaptation](https://github.com/google-research/task_adaptation) and [huggingface/transformers](https://github.com/huggingface/transformers) are licensed under the Apache 2.0 license; [Swin-Transformer](https://github.com/microsoft/Swin-Transformer), [ConvNeXt](https://github.com/facebookresearch/ConvNeXt) and [ViT-pytorch](https://github.com/jeonsworld/ViT-pytorch) are licensed under the MIT license; and [MoCo-v3](https://github.com/facebookresearch/moco-v3) and [MAE](https://github.com/facebookresearch/mae) are licensed under the Attribution-NonCommercial 4.0 International license.
+We would like to express our sincere gratitude to the authors of the VPT project for their invaluable contributions. The open-source code provided by the VPT team has been instrumental in the development of this project. 
+
+Special thanks to the VPT team for their dedication to advancing research and providing a robust foundation for others to build upon. You can find their work here: [VPT GitHub](https://github.com/KMnP/vpt).
+
+
+
