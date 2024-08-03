@@ -24,14 +24,6 @@ See `env_setup.sh`
 
 - `src/models`: handles backbone archs and heads for different fine-tuning protocols 
 
-    * 👉`src/models/vit_prompt`: <u>a folder contains the same backbones in `vit_backbones` folder,</u> specified for VPT. This folder should contain the same file names as those in  `vit_backbones`
-
-    * 👉 `src/models/vit_models.py`: <u>main model for transformer-based models</u> ❗️Note❗️: Current version only support ViT, Swin and ViT with mae, moco-v3
-
-    * `src/models/build_model.py`: main action here to utilize the config and build the model to train / eval.
-
-- `src/solver`: optimization, losses and learning rate schedules.  
-- `src/utils`: helper functions for io, loggings, training, visualizations. 
 - 👉`train.py`: call this one for training and eval a model with a specified transfer type.
 - 👉`tune_fgvc.py`: call this one for tuning learning rate and weight decay for a model with a specified transfer type. We used this script for FGVC tasks.
 - 👉`tune_vtab.py`: call this one for tuning vtab tasks: use 800/200 split to find the best lr and wd, and use the best lr/wd for the final runs
@@ -81,13 +73,14 @@ To prepare for training, you need to download and place the pre-trained Transfor
 
 Ensure that all files are placed correctly and named appropriately for the model to load successfully.
 
-### Examples for training and aggregating results
+### Training and Testing
 
-See [`demo.ipynb`](https://github.com/KMnP/vpt/blob/main/demo.ipynb) for how to use this repo.
+For convenience, you can use the scripts in the `TrainOrTestCmdShell` folder for training and testing the model:
 
-### Hyperparameters for experiments in paper
+- **Training**: Use the `dataTrain.sh` script to train the model.
+- **Testing**: Use the `CrossDatatest.sh` script to test the model.
 
-The hyperparameter values used (prompt length for VPT / reduction rate for Adapters, base learning rate, weight decay values) in Table 1-2, Fig. 3-4, Table 4-5 can be found here: [Dropbox](https://cornell.box.com/s/lv10kptgyrm8uxb6v6ctugrhao24rs2z) / [Google Drive](https://drive.google.com/drive/folders/1ldhqkXelHDXq4bG7qpKn5YEfU6sRehJH?usp=sharing). 
+These scripts simplify the process of running training and testing commands, allowing you to focus on the experimentation and evaluation of your models.
 
 ## Citation
 
