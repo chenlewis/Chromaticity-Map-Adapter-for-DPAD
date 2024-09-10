@@ -1,4 +1,4 @@
-# Visual Prompt Tuning 
+# CMA: A Chromaticity Map Adapter for Robust Detection of Screen-Recapture Document Images
 
 [https://arxiv.org/abs/2203.12119](https://cvpr.thecvf.com/virtual/2024/poster/30641) 
 
